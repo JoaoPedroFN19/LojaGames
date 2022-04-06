@@ -59,6 +59,7 @@ public class CategoriaController {
 		return categoriaRepository.findById(categoria.getId())
 				.map(resposta -> ResponseEntity.ok().body(categoriaRepository.save(categoria)))
 				.orElse(ResponseEntity.notFound().build());
+
 	}
 
 	@DeleteMapping("/{id}")
@@ -69,4 +70,5 @@ public class CategoriaController {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
 		}).orElse(ResponseEntity.notFound().build());
 	}
+
 }
